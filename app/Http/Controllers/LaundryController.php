@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\LaundryController;
 use App\Models\Laundry;
 
+
+
 class LaundryController extends Controller
 {
 
@@ -25,4 +27,11 @@ class LaundryController extends Controller
 
         return redirect()->back();
     }
+    
+
+    public function datalaundry(){
+        return view ('datalaundry');
+    }
+
+
 }
