@@ -30,7 +30,8 @@ class LaundryController extends Controller
     
 
     public function datalaundry(){
-        return view ('datalaundry');
+        $data = Laundry::all();
+        return view ('datalaundry', ['data'=>$data]);
     }
 
 
