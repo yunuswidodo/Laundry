@@ -34,5 +34,11 @@ class LaundryController extends Controller
         return view ('datalaundry', ['data'=>$data]);
     }
 
+    public function editlaundry(){
+        return view ('editlaundry');
+    }
+
+    
+
 
 }

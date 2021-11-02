@@ -44,7 +44,7 @@
                         <span class="text-secondary text-xs font-weight-bold">{{$d->tgl_laundry}}</span>
                       </td>
                       <td class="align-middle">
-                        <a class="btn btn-link text-warning text-gradient px-3 mb-0" href="{{url('editdata', [$d->id])}}"><i class="fas fa-edit"></i> Detail</a>
+                        <a class="btn btn-link text-warning text-gradient px-3 mb-0" href="{{route('editlaundry', [$d->id])}}"><i class="fas fa-edit"></i> Detail</a>
                       </td>
                       @endforeach
                   </tbody>

@@ -25,6 +25,7 @@ Route::get('/home', [HomeController::class, 'index']);
 
 Route::post('/store', [LaundryController::class, 'store']);
 Route::get('/datalaundry', [LaundryController::class, 'datalaundry']) -> name('datalaundry');
+Route::get('/editlaundry', [LaundryController::class, 'editlaundry'])->name('editlaundry');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
