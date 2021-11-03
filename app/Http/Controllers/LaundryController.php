@@ -34,8 +34,9 @@ class LaundryController extends Controller
         return view ('datalaundry', ['data'=>$data]);
     }
 
-    public function editlaundry(){
-        return view ('editlaundry');
+    public function editlaundry($id){
+        $data = Laundry::find($id);
+         return view ('editlaundry', ['data' => $data]);
     }
 
     
