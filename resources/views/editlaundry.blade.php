@@ -22,15 +22,15 @@
                     <label>Jenis</label>
                     <div class="mb-3">
                       @if($data->jenis === 0)
-                      <input type="text" name="telephon" class="form-control" placeholder="Nomor Telepon" aria-label="Nomor Telepon" aria-describedby="Nomor Telepon" value="satuan">
+                      <input type="text" id="jenis" name="satuan" class="form-control" placeholder="satuan" aria-label="satuan" aria-describedby="Nomor Telepon" value="satuan">
                       @else
-                      <input type="text" name="telephon" class="form-control" placeholder="Nomor Telepon" aria-label="Nomor Telepon" aria-describedby="Nomor Telepon" value="Kiloan">
+                      <input type="text" id="jenis" name="kiloan" class="form-control" placeholder="kiloan" aria-label="kiloan" aria-describedby="Nomor Telepon" value="Kiloan">
                       @endif
                     </div>
                     <div class="berat">
                       <label>Berat</label>
                         <div class="mb-3">
-                           <input type="text" name="berat" class="form-control" placeholder="Berat" aria-label="Berat" aria-describedby="Berat" value="{{$data->berat}}">
+                           <input type="text" name="berat"  id="berat" class="form-control" placeholder="Berat" aria-label="Berat" aria-describedby="Berat" value="{{$data->berat}}">
                         </div>
                     </div>
                     <label>Bayar</label>
@@ -47,14 +47,13 @@
                     </div>
                     <label>Tgl Antar</label>
                     <div class="mb-3">
-                      <input type="Date" name="tgl_laundry" class="form-control" placeholder="Tanggal Laundry" aria-label="Tanggal Laudry" aria-describedby="Tanggal Laundry" value="now">
+                      <input type="text" id="TglAntar" name="TglAntar" class="form-control" placeholder="Tanggal Laundry" aria-label="Tanggal Laudry" aria-describedby="Tanggal Laundry">
                     </div>
                     <div class="text-center">
                       <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Proses</button>
                     </div>
                   </form>
             </div>
-
           </div>
         </div>
       </div>
@@ -62,22 +61,17 @@
   </main>
 
   <script>
-
-/* $("#inlineRadio1").prop("checked", true);
-$('input[type="radio"]').click(function(){
-      
-        if($(this).attr("value")==0){
-            $(".berat").hide('slow');
-        }
-        if($(this).attr("value")==1){
-            $(".berat").show('slow');
-
-        }        
-    });
-**/
-
-
+    
+  var berat  = $("#berat").val();
+  var jenis  = $("#jenis").val();
+  if (jenis == "satuan") {
+    $(".berat").hide();
+  } else {
+    $(".berat").show();
+  }
 
   </script>
   
 @endsection
+
+
