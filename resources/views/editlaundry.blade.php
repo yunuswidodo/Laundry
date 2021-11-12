@@ -21,11 +21,10 @@
                     </div>
                     <label>Jenis</label>
                     <div class="mb-3">
-                      @if($data->jenis === 0)
-                      <input type="text" id="jenis" name="satuan" class="form-control" placeholder="satuan" aria-label="satuan" aria-describedby="Nomor Telepon" value="satuan">
-                      @else
-                      <input type="text" id="jenis" name="kiloan" class="form-control" placeholder="kiloan" aria-label="kiloan" aria-describedby="Nomor Telepon" value="Kiloan">
-                      @endif
+                        <select class="form-select" name="jenis" id="jenis">
+                          <option value="0">Satuan</option>
+                          <option value="1">Kiloan</option>
+                        </select>
                     </div>
                     <div class="berat">
                       <label>Berat</label>
@@ -61,13 +60,34 @@
   </main>
 
   <script>    
-  var berat  = $("#berat").val();
-  var jenis  = $("#jenis").val();
-  if (jenis == "satuan") {
-    $(".berat").hide();
-  } else {
-    $(".berat").show();
+
+//   
+
+ var datajenis = {{$data->jenis}}
+ var jenis = 0;
+ var berat = $(".berat");
+
+ console.log(datajenis);
+ console.log(jenis + " satuan");
+
+  if (jenis == datajenis ){
+    $("select option[value='0']").attr("selected", true);
+    $("select option[value='1']").attr("selected", false);
+    berat.hide();
+  }else{
+    $("select option[value='0']").attr("selected", false);
+    $("select option[value='1']").attr("selected", true);
+    berat.show();
   }
+
+   
+
+
+
+
+ 
+  
+
   </script>
   
 @endsection
