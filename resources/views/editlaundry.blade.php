@@ -6,7 +6,7 @@
           <div class="card mb-4">
             <div class="card-header pb-0">
               <h6>Authors table</h6>
-              <form role="form" method="post" action="store">
+              <form role="form" method="post" action="store">    
                     <label>Customer</label>
                     <div class="mb-3">
                       <input type="text" name="customer" class="form-control" placeholder="Customer" aria-label="Customer" aria-describedby="customer" value="{{$data->customer}}">
@@ -47,7 +47,7 @@
                     </div>
                     <label>Tgl Antar</label>
                     <div class="mb-3">
-                      <input type="text" id="TglAntar" name="TglAntar" class="form-control" placeholder="Tanggal Laundry" aria-label="Tanggal Laudry" aria-describedby="Tanggal Laundry">
+                      <input type="date" id="TglAntar" name="TglAntar" class="form-control" placeholder="Tanggal Laundry" aria-label="Tanggal Laudry" aria-describedby="Tanggal Laundry">
                     </div>
                     <div class="text-center">
                       <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Proses</button>
@@ -60,8 +60,7 @@
     </div>
   </main>
 
-  <script>
-    
+  <script>    
   var berat  = $("#berat").val();
   var jenis  = $("#jenis").val();
   if (jenis == "satuan") {
@@ -69,7 +68,6 @@
   } else {
     $(".berat").show();
   }
-
   </script>
   
 @endsection
