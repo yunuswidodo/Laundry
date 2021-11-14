@@ -22,8 +22,8 @@
                     <label>Jenis</label>
                     <div class="mb-3">
                         <select class="form-select" name="jenis" id="jenis">
-                          <option value="0">Satuan</option>
-                          <option value="1">Kiloan</option>
+                          <option value="0" class="jenis_satuan">Satuan</option>
+                          <option value="1" class="jenis_kiloan">Kiloan</option>
                         </select>
                     </div>
                     <div class="berat">
@@ -67,9 +67,6 @@
  var jenis = 0;
  var berat = $(".berat");
 
- console.log(datajenis);
- console.log(jenis + " satuan");
-
   if (jenis == datajenis ){
     $("select option[value='0']").attr("selected", true);
     $("select option[value='1']").attr("selected", false);
@@ -79,15 +76,15 @@
     $("select option[value='1']").attr("selected", true);
     berat.show();
   }
-
-   
-
-
-
-
  
-  
-
+  $("select").on('change', function(){
+     var selectval = $("#jenis option:selected").val();
+     if (selectval == 1) {
+       berat.show();
+     } else {
+       berat.hide();
+     }
+  });
   </script>
   
 @endsection
