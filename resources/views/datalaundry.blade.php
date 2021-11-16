@@ -16,6 +16,8 @@
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Nomor Hanphone </th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">alamat</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tanggal Laundry</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
                       <th class="text-secondary opacity-7"></th>
                     </tr>
                   </thead>
@@ -28,9 +30,7 @@
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm"></h6>
-                         
                               {{$d->customer}}
-                           
                           </div>
                         </div>
                       </td>
@@ -42,6 +42,14 @@
                       </td>
                       <td class="align-middle text-center">
                         <span class="text-secondary text-xs font-weight-bold">{{$d->tgl_laundry}}</span>
+                      </td>
+                      
+                      <td class="align-middle text-center text-sm">
+                      @if($d->tgl_antar != NULL)
+                        <span class="badge badge-sm bg-gradient-success">sudah diantar</span>
+                      @else
+                        <span class="badge badge-sm bg-gradient-secondary">belum diantar</span>
+                      @endif
                       </td>
                       <td class="align-middle">
                         <a class="btn btn-link text-warning text-gradient px-3 mb-0" href="{{route('editlaundry', [$d->id])}}"><i class="fas fa-edit"></i> Detail</a>

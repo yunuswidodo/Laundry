@@ -42,7 +42,6 @@ class LaundryController extends Controller
     public function updatelaundry(Request $request, $id){
 
         $data = Laundry::find($id);
-
         $data->customer=$request->customer;
         $data->nomer_telephon=$request->telephon;
         $data->alamat=$request->alamat;
