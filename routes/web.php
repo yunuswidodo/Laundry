@@ -26,6 +26,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::post('/store', [LaundryController::class, 'store']);
 Route::get('/datalaundry', [LaundryController::class, 'datalaundry']) -> name('datalaundry');
 Route::get('/editlaundry/{id}', [LaundryController::class, 'editlaundry'])->name('editlaundry');
+Route::put('/updatelaundry/{id}', [LaundryController::class, 'updatelaundry'])->name('updatelaundry');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

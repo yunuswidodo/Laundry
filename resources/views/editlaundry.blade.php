@@ -6,7 +6,9 @@
           <div class="card mb-4">
             <div class="card-header pb-0">
               <h6>Authors table</h6>
-              <form role="form" method="post" action="store">    
+              <form role="form" method="POST" action="{{route('updatelaundry', [$data->id])}}">    
+                  @method('PUT')
+                  @csrf
                     <label>Customer</label>
                     <div class="mb-3">
                       <input type="text" name="customer" class="form-control" placeholder="Customer" aria-label="Customer" aria-describedby="customer" value="{{$data->customer}}">
@@ -15,8 +17,8 @@
                     <div class="mb-3">
                       <input type="text" name="telephon" class="form-control" placeholder="Nomor Telepon" aria-label="Nomor Telepon" aria-describedby="Nomor Telepon" value="{{$data->nomer_telephon}}">
                     </div>
-                    <label>Alamat</label>
                     <div class="mb-3">
+                      <label>Alamat</label>
                       <textarea type="text" name="alamat" class="form-control"  rows="3" placeholder="Alamat" aria-label="Alamat" aria-describedby="Alamat">{{$data->alamat}}</textarea>
                     </div>
                     <label>Jenis</label>
@@ -46,7 +48,7 @@
                     </div>
                     <label>Tgl Antar</label>
                     <div class="mb-3">
-                      <input type="date" id="TglAntar" name="TglAntar" class="form-control" placeholder="Tanggal Laundry" aria-label="Tanggal Laudry" aria-describedby="Tanggal Laundry">
+                      <input type="date" id="tgl_antar" name="tgl_antar" class="form-control" placeholder="Tanggal Laundry" aria-label="Tanggal Laudry" aria-describedby="Tanggal Laundry">
                     </div>
                     <div class="text-center">
                       <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Proses</button>
@@ -60,9 +62,6 @@
   </main>
 
   <script>    
-
-//   
-
  var datajenis = {{$data->jenis}}
  var jenis = 0;
  var berat = $(".berat");

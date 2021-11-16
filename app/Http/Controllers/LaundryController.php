@@ -39,6 +39,22 @@ class LaundryController extends Controller
          return view ('editlaundry', ['data' => $data]);
     }
 
+    public function updatelaundry(Request $request, $id){
+
+        $data = Laundry::find($id);
+
+        $data->customer=$request->customer;
+        $data->nomer_telephon=$request->telephon;
+        $data->alamat=$request->alamat;
+        $data->jenis=$request->jenis;
+        $data->berat=$request->berat;
+        $data->tgl_laundry=$request->tgl_laundry;
+        $data->keterangan=$request->keterangan;
+        $data->tgl_antar=$request->tgl_antar;
+        $data->save();
+        return redirect()->route('datalaundry');
+    }
+
     
 
 
