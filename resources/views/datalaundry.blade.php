@@ -53,7 +53,11 @@
                       </td>
                       <td class="align-middle">
                         <a class="btn btn-link text-warning text-gradient px-3 mb-0" href="{{route('editlaundry', [$d->id])}}"><i class="fas fa-edit"></i> Detail</a>
+                        <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="{{route('deletelaundry', [$d->id])}}"><i class="far fa-trash-alt me-2" aria-hidden="true"></i>Delete</a>
                       </td>
+                      
+                      
+                      
                       @endforeach
                   </tbody>
                 </table>

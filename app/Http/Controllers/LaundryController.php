@@ -54,6 +54,14 @@ class LaundryController extends Controller
         return redirect()->route('datalaundry');
     }
 
+public function deletelaundry($id){
+       $data = Laundry::find($id);
+       $data->delete();
+       return redirect()->route('datalaundry');
+      
+}
+
+
     
 
 
